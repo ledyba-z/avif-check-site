@@ -64,8 +64,16 @@ done
 
 echo "<h1>AVIFS images</h1>"
 
+for avif in \
+  star-8bpc \
+  star-8bpc-with-alpha \
+  star-10bpc \
+  star-10bpc-with-alpha \
+  star-12bpc \
+  star-12bpc-with-alpha
+do
 cat <<EOF
-  <h2><a href="#star.avifs" name="star.avifs">star.avifs</a><h2>
+  <h2><a href="#${avif}.avifs" name="${avif}.avifs">${avif}.avifs</a><h2>
    <table>
     <tr>
       <th>GIF version</th>
@@ -73,23 +81,12 @@ cat <<EOF
     </tr>
     <tr>
       <td><img src="./star.gif" width="400"></td>
-      <td><img src="./star.avifs" width="400"></td>
+      <td><img src="./${avif}.avifs" width="400"></td>
     </tr>
   </table>
-
-  <h2><a href="#star-with-alpha.avifs" name="star-with-alpha.avifs">star-with-alpha.avifs</a><h2>
-   <table>
-    <tr>
-      <th>GIF version</th>
-      <th>AVIF version</th>
-    </tr>
-    <tr>
-      <td><img src="./star.gif" width="400"></td>
-      <td><img src="./star-with-alpha.avifs" width="400"></td>
-    </tr>
-  </table>
-
 EOF
+done
+
 
 cat <<EOF
   </body>
